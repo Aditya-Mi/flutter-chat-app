@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Chat App',
       theme: ThemeData().copyWith(
         appBarTheme: const AppBarTheme(
           iconTheme: IconThemeData(color: Colors.white),
