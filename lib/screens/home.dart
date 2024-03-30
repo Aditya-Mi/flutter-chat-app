@@ -23,8 +23,8 @@ class _HomeState extends State<Home> {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
+            onPressed: () async {
+              await FirebaseAuth.instance.signOut();
             },
             icon: const Icon(Icons.logout),
           ),

@@ -11,7 +11,7 @@ class FirebaseAuthMethods {
 
   //Firebase function to login
   Future<void> login({required String email, required String password}) async {
-    await _firebaseAuth.createUserWithEmailAndPassword(
+    await _firebaseAuth.signInWithEmailAndPassword(
         email: email, password: password);
   }
 

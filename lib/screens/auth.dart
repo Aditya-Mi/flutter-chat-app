@@ -25,7 +25,7 @@ class _AuthScreenState extends State<AuthScreen> {
 
   void _submit() async {
     final isValid = _form.currentState!.validate();
-    if (_selectedImage == null) {
+    if (_selectedImage == null && !_isLogin) {
       ScaffoldMessenger.of(context).clearSnackBars();
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
