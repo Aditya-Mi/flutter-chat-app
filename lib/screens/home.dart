@@ -44,6 +44,7 @@ class _HomeState extends State<Home> {
             } else {
               List<QueryDocumentSnapshot> userDocs = snapshot.data!.docs;
               List<QueryDocumentSnapshot> filteredUserDocs = [];
+              //Filters users so that current user is not shown in home screen.
               for (var doc in userDocs) {
                 if (doc.id != authenticatedUser.uid) {
                   filteredUserDocs.add(doc);

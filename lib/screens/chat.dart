@@ -44,10 +44,12 @@ class _ChatScreenState extends State<ChatScreen> {
       ),
       body: Column(
         children: [
+          //Widget which shows all the text messages
           Expanded(
               child: ChatMessages(
             user: widget.user,
           )),
+          //Widget to send a new text
           NewMessage(
             user: widget.user,
           ),

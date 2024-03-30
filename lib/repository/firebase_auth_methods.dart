@@ -9,11 +9,13 @@ class FirebaseAuthMethods {
   final _firestore = FirebaseFirestore.instance;
   final _storage = FirebaseStorage.instance;
 
+  //Firebase function to login
   Future<void> login({required String email, required String password}) async {
     await _firebaseAuth.createUserWithEmailAndPassword(
         email: email, password: password);
   }
 
+  //Firebae function to signup for first time user
   Future<void> signUp({
     required String email,
     required String password,
