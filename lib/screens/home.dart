@@ -52,23 +52,27 @@ class _HomeState extends State<Home> {
               }
               return ListView.separated(
                 itemBuilder: (context, index) {
-                  return GestureDetector(
-                    onTap: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ChatScreen(
-                          user: models.User.fromSnap(
-                            filteredUserDocs[index],
+                  return filteredUserDocs.isEmpty
+                      ? const Center(
+                          child: Text('Add users'),
+                        )
+                      : GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ChatScreen(
+                                user: models.User.fromSnap(
+                                  filteredUserDocs[index],
+                                ),
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    ),
-                    child: UserItem(
-                      user: models.User.fromSnap(
-                        filteredUserDocs[index],
-                      ),
-                    ),
-                  );
+                          child: UserItem(
+                            user: models.User.fromSnap(
+                              filteredUserDocs[index],
+                            ),
+                          ),
+                        );
                 },
                 itemCount: snapshot.data!.size - 1,
                 separatorBuilder: (BuildContext context, int index) {
